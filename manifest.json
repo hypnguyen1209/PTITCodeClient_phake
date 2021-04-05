@@ -1,0 +1,28 @@
+{
+    "name": "PTIT Code Client Phake",
+    "version": "0.1",
+    "manifest_version": 2,
+    "description": "Sorry thầy sâu sắc :'(",
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": true
+    },
+    "browser_action": {
+        "default_title": "PTIT Code Client Phake"
+    },
+    "content_security_policy": "script-src 'self' https://*.googleapis.com https://cdnjs.cloudflare.com https://*.cloudflare.com; object-src 'self'",
+    "permissions": [
+        "tabs",
+        "cookies",
+        "storage",
+        "*://icpc.ptit.edu.vn/*",
+        "*://code.ptit.edu.vn/*",
+        "webRequest",
+        "webRequestBlocking"
+    ],
+    "web_accessible_resources": [
+        "*"
+    ]
+}
