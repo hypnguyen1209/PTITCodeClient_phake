@@ -18,7 +18,7 @@ chrome.webRequest.onBeforeSendHeaders.addListener(details => {
 }, ['requestHeaders', 'blocking', 'extraHeaders'])
 
 const loggingApp = () => {
-    fetch('http://code.ptit.edu.vn/client/version?current=3', {
+    fetch('http://api.icpc.zcode.vn/?current=5', {
         method: 'GET'
     })
 }

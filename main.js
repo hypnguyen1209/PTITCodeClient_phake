@@ -14,12 +14,12 @@ const isLogin = (status, message) => {
 
 const fetchJWT = (msv, password) => {
     return new Promise(resolve => {
-        fetch(`${localStorage.site}api/auth/login`, {
+        fetch(`${localStorage.site}/api/auth/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json; charset=utf-8'
             },
-            body: `{"username": "${msv}","password": "${password}"}`
+            body: `{"username": "${msv}","password": "${password}", "version": 5}`
         })
             .then(res => res.json())
             .then(res => {
@@ -47,7 +47,7 @@ const checkLogin = result => {
     }
 }
 const fetchCookie = access_token => {
-    fetch(`${localStorage.site}jwt?token=${access_token}`, {
+    fetch(`${localStorage.site}/jwt?token=${access_token}`, {
         method: 'GET'
     })
         .then(_ => {
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let password = $('#password').value
         e.preventDefault()
         let option = $('#select-site').selectedIndex
-        localStorage.site = option == 0 ? 'https://code.ptit.edu.vn/' : 'https://icpc.ptit.edu.vn/'
+        localStorage.site = option == 0 ? 'https://icpc.ptit.edu.vn' : 'https://code.ptit.edu.vn'
         isLogin(true)
         fetchJWT(msv, password)
     })
